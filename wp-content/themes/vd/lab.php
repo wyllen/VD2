@@ -106,7 +106,38 @@
              </div>
          </div>
          </div>
-      
+         <div class="lab_item">
+          <div class="hexagon hexagon2">
+            <div class="hexagon-in1">
+                <div class="hexagon-in2" style="background-image: url(images/luigi.jpg);">                
+                </div>
+             </div>
+         </div>
+         </div>
+         <div class="lab_item">
+          <div class="hexagon hexagon2">
+            <div class="hexagon-in1">
+                <div class="hexagon-in2" style="background-image: url(images/luigi.jpg);">                
+                </div>
+             </div>
+         </div>
+         </div>
+          <div class="lab_item">
+          <div class="hexagon hexagon2">
+            <div class="hexagon-in1">
+                <div class="hexagon-in2" style="background-image: url(images/luigi.jpg);">                
+                </div>
+             </div>
+         </div>
+         </div>
+       <div class="lab_item">
+          <div class="hexagon hexagon2">
+            <div class="hexagon-in1">
+                <div class="hexagon-in2" style="background-image: url(images/luigi.jpg);">                
+                </div>
+             </div>
+         </div>
+         </div>
          
           
 	</article>
