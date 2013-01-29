@@ -1,6 +1,8 @@
 <section id="lab">
 <div class="sectionheader">	<h1><?php _e( 'Le labo', 'vd' ); ?></h1><div class="beaker"></div></div>
-	<article>
+	<label for="checklab" class="boxbutton labbutton">J'en veux plus!</label>
+    <input id="checklab" type="checkbox">
+    <article>
 
         <div class="lab_item">		
         <div class="hexagon hexagon2">

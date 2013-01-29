@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" media="all">
+	<link rel="stylesheet" type="text/css" href="<?php echo home_url( '/' ); ?>/wp-content/themes/vd/style.css" media="all">
 	<!--[if IE]>
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/ie.css" media="all">
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/multi-column.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo home_url( '/' ); ?>/wp-content/themes/vd/ie.css" media="all">
+<script type="text/javascript" src="<?php echo home_url( '/' ); ?>/wp-content/themes/vd/multi-column.js"></script>
 <![endif]-->
 	<meta charset="utf-8">
 	<meta content='initial-scale=1; maximum-scale=1; user-scalable=0;' name='viewport'/>
 	<title><?php wp_title(''); ?></title>	
 	<?php wp_head(); ?>
 	<!--[if lte IE 8]>
-<script language="JavaScript" src="<?php bloginfo('template_url'); ?>/js/html5.js"></script>
- <script language="JavaScript" src="<?php bloginfo('template_url'); ?>/js/respond.js"></script>
+<script language="JavaScript" src="<?php echo home_url( '/' ); ?>/wp-content/themes/vd/js/html5.js"></script>
+ <script language="JavaScript" src="<?php echo home_url( '/' ); ?>/wp-content/themes/vd/js/respond.js"></script>
     <![endif]-->
 </head>
 <body class="clearfix">
@@ -27,6 +27,10 @@
 				<li><a href="#lab" onclick="smoothScroll('lab');return false"  class="ancre_lab"><div class="beaker"></div></a></li>
 			</ul>
 		</div>
+
+		<a href="#header" class="ancre_top" onclick="smoothScroll('header');return false">
+			<div class="arrowup"></div>
+		</a>
 	</header>
 
 	
