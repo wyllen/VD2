@@ -5,21 +5,25 @@
 	<article>
 		
 		<ul id="list_rea">
-		<li><a href=""><img src="images/6.jpg"  class="imgrea" alt=""></a></li>
-		<li><a href=""><img src="images/1.jpg"   class="imgrea" alt=""></a></li>
-		<li><a href=""><img src="images/4.jpg"   class="imgrea" alt=""></a></li>
-		<li><a href=""><img src="images/8.jpg"   class="imgrea" alt=""></a></li>
-		<li><a href=""><img src="images/2.jpg"   class="imgrea" alt=""></a></li>
-		<li><a href=""><img src="images/3.jpg"   class="imgrea" alt=""></a></li>
-		<li><a href=""><img src="images/5.jpg"   class="imgrea" alt=""></a></li>
-		<li><a href=""><img src="images/1.jpg"   class="imgrea" alt=""></a></li>
-		<li><a href=""><img src="images/6.jpg"   class="imgrea" alt=""></a></li>
-		<li><a href=""><img src="images/7.jpg"   class="imgrea" alt=""></a></li>
-		<li><a href=""><img src="images/8.jpg"   class="imgrea" alt=""></a></li>
-		<li><a href=""><img src="images/4.jpg"   class="imgrea" alt=""></a></li>
-		<li><a href=""><img src="images/4.jpg"   class="imgrea" alt=""></a></li>
-		<li><a href=""><img src="images/3.jpg"   class="imgrea" alt=""></a></li>
-		<li><a href=""><img src="images/5.jpg"   class="imgrea" alt=""></a></li>
+		
+		<?php
+
+        $i=0; $reas = new WP_Query('post_type=realisations&posts_per_page=-1&order=DESC'); 
+
+            if($reas->have_posts()) : while($reas->have_posts()) : $reas-> the_post();     
+
+            $image= get_images_src('mid',false,$post->ID);     
+//var_dump($image);
+		?>  
+
+
+		<li><a href="<?php the_permalink(); ?>"><img src="<?php echo $image['image1'][0]; ?>"  class="imgrea" alt=""></a></li>
+		
+            <?php
+
+            endwhile;endif;
+
+            ?>
 	</ul>	
 	</article>
 </section>

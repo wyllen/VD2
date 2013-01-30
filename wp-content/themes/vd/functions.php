@@ -77,3 +77,60 @@ register_post_type('labs', array(
 	// AJOUT METAS BOX
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
+
+	add_image_size( 'mid', 200);
+
+
+
+	add_filter('images_cpt','my_image_cpt');
+	function my_image_cpt(){
+		$cpts = array('page','labs','realisations');
+		return $cpts;
+	}
+	
+	add_filter('list_images','my_list_images');
+	function my_list_images(){
+		//I only need two pictures
+		$picts = array(
+			'image1' => '_image1',
+		);
+		return $picts;
+	}
+	
+	
+	
+	
+	
+	
+			add_action("admin_init", "admin_init");
+
+	function admin_init(){ //initialisation des champs spécifiques
+
+		add_meta_box("laburl", "LABURL", "laburl", "labs", "normal", "high");
+
+		
+	}
+
+function laburl($post){
+
+	$val = get_post_meta($post->ID,'_laburl',true);
+
+    echo '
+<label for="laburl">URL:</label><br>
+    <input type="text" style="width:100%;" name="laburl" id="laburl" value="'.$val.'" >
+';
+
+}
+
+
+
+
+add_action('save_post','save_metaboxes');
+
+function save_metaboxes($post_ID){
+	if(isset($_POST['laburl'])){
+
+        update_post_meta($post_ID,'_laburl', esc_html($_POST['laburl']));		
+
+    }
+}

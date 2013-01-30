@@ -3,144 +3,30 @@
 	<label for="checklab" class="boxbutton labbutton">J'en veux plus!</label>
     <input id="checklab" type="checkbox">
     <article>
+<?php
 
-        <div class="lab_item">		
+        $i=0; $labs = new WP_Query('post_type=labs&posts_per_page=-1&order=DESC'); 
+
+            if($labs->have_posts()) : while($labs->have_posts()) : $labs-> the_post();     
+
+            $image= get_images_src('full',false,$post->ID);     
+//var_dump($image);
+?>  
+        <a  href="<?php echo get_post_meta($post->ID,'_laburl',true); ?>" target="_blank" class="lab_item">		
         <div class="hexagon hexagon2">
             <div class="hexagon-in1">
-                <div class="hexagon-in2" style="background-image: url(images/droid.jpg);">                
+                <div class="hexagon-in2" style="background-image: url(<?php echo $image['image1'][0]; ?>);">                
                 </div>
              </div>
          </div>
-         </div>
-          <div class="lab_item">
-          <div class="hexagon hexagon2">
-            <div class="hexagon-in1">
-                <div class="hexagon-in2" style="background-image: url(images/rayban.jpg);">                
-                </div>
-             </div>
-         </div>
-         </div>
- <div class="lab_item">
-          <div class="hexagon hexagon2">
-            <div class="hexagon-in1">
-                <div class="hexagon-in2" style="background-image: url(images/character.jpg);">                
-                </div>
-             </div>
-         </div>
-         </div>
- <div class="lab_item">
-          <div class="hexagon hexagon2">
-            <div class="hexagon-in1">
-                <div class="hexagon-in2" style="background-image: url(images/luigi.jpg);">                
-                </div>
-             </div>
-         </div>
-         </div>
-              <div class="lab_item">        
-        <div class="hexagon hexagon2">
-            <div class="hexagon-in1">
-                <div class="hexagon-in2" style="background-image: url(images/droid.jpg);">                
-                </div>
-             </div>
-         </div>
-         </div>
-          <div class="lab_item">
-          <div class="hexagon hexagon2">
-            <div class="hexagon-in1">
-                <div class="hexagon-in2" style="background-image: url(images/rayban.jpg);">                
-                </div>
-             </div>
-         </div>
-         </div>
- <div class="lab_item">
-          <div class="hexagon hexagon2">
-            <div class="hexagon-in1">
-                <div class="hexagon-in2" style="background-image: url(images/character.jpg);">                
-                </div>
-             </div>
-         </div>
-         </div>
- <div class="lab_item">
-          <div class="hexagon hexagon2">
-            <div class="hexagon-in1">
-                <div class="hexagon-in2" style="background-image: url(images/luigi.jpg);">                
-                </div>
-             </div>
-         </div>
-         </div>
-              <div class="lab_item">        
-        <div class="hexagon hexagon2">
-            <div class="hexagon-in1">
-                <div class="hexagon-in2" style="background-image: url(images/droid.jpg);">                
-                </div>
-             </div>
-         </div>
-         </div>
-          <div class="lab_item">
-          <div class="hexagon hexagon2">
-            <div class="hexagon-in1">
-                <div class="hexagon-in2" style="background-image: url(images/rayban.jpg);">                
-                </div>
-             </div>
-         </div>
-         </div>
- <div class="lab_item">
-          <div class="hexagon hexagon2">
-            <div class="hexagon-in1">
-                <div class="hexagon-in2" style="background-image: url(images/character.jpg);">                
-                </div>
-             </div>
-         </div>
-         </div>
- <div class="lab_item">
-          <div class="hexagon hexagon2">
-            <div class="hexagon-in1">
-                <div class="hexagon-in2" style="background-image: url(images/luigi.jpg);">                
-                </div>
-             </div>
-         </div>
-         </div>
-         <div class="lab_item">
-          <div class="hexagon hexagon2">
-            <div class="hexagon-in1">
-                <div class="hexagon-in2" style="background-image: url(images/luigi.jpg);">                
-                </div>
-             </div>
-         </div>
-         </div>
-         <div class="lab_item">
-          <div class="hexagon hexagon2">
-            <div class="hexagon-in1">
-                <div class="hexagon-in2" style="background-image: url(images/luigi.jpg);">                
-                </div>
-             </div>
-         </div>
-         </div>
-         <div class="lab_item">
-          <div class="hexagon hexagon2">
-            <div class="hexagon-in1">
-                <div class="hexagon-in2" style="background-image: url(images/luigi.jpg);">                
-                </div>
-             </div>
-         </div>
-         </div>
-          <div class="lab_item">
-          <div class="hexagon hexagon2">
-            <div class="hexagon-in1">
-                <div class="hexagon-in2" style="background-image: url(images/luigi.jpg);">                
-                </div>
-             </div>
-         </div>
-         </div>
-       <div class="lab_item">
-          <div class="hexagon hexagon2">
-            <div class="hexagon-in1">
-                <div class="hexagon-in2" style="background-image: url(images/luigi.jpg);">                
-                </div>
-             </div>
-         </div>
-         </div>
-         
-          
+         </a>
+
+            <?php
+
+            endwhile;endif;
+
+            ?>
+            
+       
 	</article>
 </section>
